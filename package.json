@@ -1,7 +1,7 @@
 {
   "private": true,
   "version": "0.0.0",
-  "name": "reason-react-native-monorepo",
+  "name": "bs-react-native-monorepo",
   "license": "MIT",
   "devDependencies": {
     "bs-platform": "^5.0.4",
@@ -39,14 +39,7 @@
     }
   },
   "workspaces": [
-    "reason-react-native",
-    "reason-react-native-template",
-    "bs-react-native-jsx3-compat",
     "bs-react-native",
-    "bs-react-native-example",
-    "reason-react-navigation",
-    "reason-react-navigation-example",
-    "@reason-react-native/*",
-    "website"
+    "bs-react-native-example"
   ]
 }
