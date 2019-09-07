@@ -1,58 +1,52 @@
 /**
-{3 Example of use}
-You can read more on RefreshControl component usage in official docs: {{:https://facebook.github.io/react-native/docs/refreshcontrol}}
+ Use [ProgressViewIOS] {{:https://facebook.github.io/react-native/docs/progressviewios}} to render a [UIProgressView] on iOS.
 
-{3 Props}
-{4 onRefresh}
-{[
-  onRefresh: unit => unit=?
-]}
-{4 refreshing}
-{[
-  ~refreshing: bool=?,
-]}
-{4 colors}
-{[
-  ~colors: array(string)=?,
-]}
-{4 enabled}
-{[
-  ~enabled: bool=?,
-]}
-{4 progressBackgroundColor}
-{[
-  ~progressBackgroundColor: string=?,
-]}
-{4 progressViewOffset}
-{[
-  ~progressViewOffset: float=?,
-]}
-{4 tintColor}
-{[
-  ~tintColor: string=?,
-]}
-{4 title}
-{[
-  ~title: string=?,
-]}
-{4 titleColor}
-{[
-  ~titleColor: string=?,
-]}
-All other {{:\BsReactNative/View-BsReactNative} [View] props}
+ {3 Example of use}
+  {[
+    let component = ReasonReact.statelessComponent("MyComponent");
+
+    let make = _children => {
+      ...component,
+      render: _self => <ProgressViewIOS progress=0.4 progressTintColor="tomato" />,
+    };
+  ]}
+
+ {3 Props}
+ {{:\BsReactNative/View-BsReactNative} [View] props}
+ {4 progress}
+ {[
+   ~progress: float
+ ]}
+ {4 progressImage}
+ {[
+   ~progressImage: Image.imageSource=?
+ ]}
+ {4 progressTintColor}
+ {[
+   ~progressTintColor: string=?
+ ]}
+ {4 progressViewStyle}
+ {[
+   ~progressViewStyle: Style.t=?
+ ]}
+ {4 trackImage}
+ {[
+   trackImage: Image.imageSource=?
+ ]}
+ {4 trackTintColor}
+ {[
+   ~trackTintColor: string=?
+ ]}
 */
 
 let make:
   (
-    ~onRefresh: unit => unit=?,
-    ~refreshing: bool=?,
-    ~colors: array(string)=?,
-    ~enabled: bool=?,
-    ~progressBackgroundColor: string=?,
-    ~progressViewOffset: float=?,
-    ~tintColor: string=?,
-    ~title: string=?,
-    ~titleColor: string=?,
+    ~progress: float,
+    ~progressImage: Image.imageSource=?,
+    ~progressTintColor: string=?,
+    ~progressViewStyle: Style.t=?,
+    ~trackImage: Image.imageSource=?,
+    ~trackTintColor: string=?,
     ~accessibilityLabel: ReasonReact.reactElement=?,
     ~accessible: bool=?,
     ~hitSlop: Types.insets=?,
@@ -82,5 +76,5 @@ let make:
   ReasonReact.component(
     ReasonReact.stateless,
     ReasonReact.noRetainedProps,
-    unit,
+    ReasonReact.actionless,
   );

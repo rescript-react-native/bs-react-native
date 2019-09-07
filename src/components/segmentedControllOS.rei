@@ -1,52 +1,51 @@
 /**
- Use [ProgressViewIOS] {{:https://facebook.github.io/react-native/docs/progressviewios}} to render a [UIProgressView] on iOS.
+  Use SegmentedControlIOS to render a [UISegmentedControl] iOS.
+  You can read more on [SegmentedControlIOS] component usage in official docs: {{:https://facebook.github.io/react-native/docs/segmentedcontrolios}}
 
- {3 Example of use}
+  {3 Props}
+
+  {{:\BsReactNative/View-BsReactNative} [View] props}
+
+  {4 values}
   {[
-    let component = ReasonReact.statelessComponent("MyComponent");
-
-    let make = _children => {
-      ...component,
-      render: _self => <ProgressViewIOS progress=0.4 progressTintColor="tomato" />,
-    };
+    ~values: list(string),
+  ]}
+  {4 selectedIndex}
+  {[
+    ~selectedIndex: int=?,
+  ]}
+  {4 onChange}
+  {[
+    ~onChange: RNEvent.t => unit=?,
+  ]}
+  {4 enabled}
+  {[
+    ~enabled: bool=?,
+  ]}
+  {4 momentary}
+  {[
+    ~momentary: bool=?,
+  ]}
+  {4 tintColor}
+  {[
+    ~tintColor: string=?,
+  ]}
+  {4 onValueChange}
+  {[
+    ~onValueChange: string => unit=?,
   ]}
 
- {3 Props}
- {{:\BsReactNative/View-BsReactNative} [View] props}
- {4 progress}
- {[
-   ~progress: float
- ]}
- {4 progressImage}
- {[
-   ~progressImage: Image.imageSource=?
- ]}
- {4 progressTintColor}
- {[
-   ~progressTintColor: string=?
- ]}
- {4 progressViewStyle}
- {[
-   ~progressViewStyle: Style.t=?
- ]}
- {4 trackImage}
- {[
-   trackImage: Image.imageSource=?
- ]}
- {4 trackTintColor}
- {[
-   ~trackTintColor: string=?
- ]}
 */
 
 let make:
   (
-    ~progress: float,
-    ~progressImage: Image.imageSource=?,
-    ~progressTintColor: string=?,
-    ~progressViewStyle: Style.t=?,
-    ~trackImage: Image.imageSource=?,
-    ~trackTintColor: string=?,
+    ~values: list(string),
+    ~selectedIndex: int=?,
+    ~onChange: RNEvent.t => unit=?,
+    ~enabled: bool=?,
+    ~momentary: bool=?,
+    ~tintColor: string=?,
+    ~onValueChange: string => unit=?,
     ~accessibilityLabel: ReasonReact.reactElement=?,
     ~accessible: bool=?,
     ~hitSlop: Types.insets=?,
@@ -76,5 +75,5 @@ let make:
   ReasonReact.component(
     ReasonReact.stateless,
     ReasonReact.noRetainedProps,
-    ReasonReact.actionless,
+    unit,
   );
